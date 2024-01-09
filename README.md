@@ -196,6 +196,6 @@ condition holds true, the code block runs once, otherwise it doesn't run at all.
 
 ```
 if fucking buddy over there says 2 < 3 {
-    you know what? "this ran"
+    you know what? "this ran" eh!
 }
 ```
