@@ -15,6 +15,7 @@ Cargo.lock
 
 # Antlr4
 src/grammar/
+.antlr
 
 
 # Environment
