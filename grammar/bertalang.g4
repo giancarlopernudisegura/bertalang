@@ -54,12 +54,21 @@ function_call
     ;
 
 expression
-    : function_call     # function
-    | STRING_LITERAL    # literal
-    | BOOLEAN_LITERAL   # literal
-    | INTEGER_LITERAL   # literal
-    | FLOAT_TYPE        # literal
-    | IDENTIFIER        # id
+    : LEFT_PAREN expression RIGHT_PAREN                         # parenthesis
+    | (op=ADD | op=SUB | op=NOT) expression                     # unary
+    | <assoc='right'> expression op=POWER expression            # binary
+    | expression (op=MUL | op=DIV | op=MOD) expression          # binary
+    | expression (op=ADD | op=SUB) expression                   # binary
+    | expression (op=EQ | op=NEQ) expression                    # binary
+    | expression (op=GT | op=GTE | op=LT | op=LTE) expression   # binary
+    | expression op=AND                                         # binary
+    | expression (op=OR | op=XOR) expression                    # binary
+    | function_call                                             # function
+    | STRING_LITERAL                                            # literal
+    | BOOLEAN_LITERAL                                           # literal
+    | INTEGER_LITERAL                                           # literal
+    | FLOAT_TYPE                                                # literal
+    | IDENTIFIER                                                # id
     ;
 
 while_loop
@@ -185,6 +194,71 @@ LEFT_CURLY
 RIGHT_CURLY
     : '}'
     ;
+
+NOT
+    : 'not'
+    ;
+
+AND
+    : 'and'
+    ;
+
+OR
+    : 'or'
+    ;
+
+XOR
+    : 'xor'
+    ;
+
+POWER
+    : '**'
+    ;
+
+MUL
+    : '*'
+    ;
+
+DIV
+    : '/'
+    ;
+
+MOD
+    : '%'
+    ;
+
+ADD
+    : '+'
+    ;
+
+SUB
+    : '-'
+    ;
+
+EQ
+    : '=='
+    ;
+
+NEQ
+    : '!='
+    ;
+
+GT
+    : '>'
+    ;
+
+GTE
+    : '>='
+    ;
+
+LT
+    : '<'
+    ;
+
+LTE
+    : '<='
+    ;
+
 
 STRING_LITERAL
     : '"' (ESC | ~["])* '"'
