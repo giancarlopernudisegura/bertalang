@@ -8,7 +8,8 @@ A general purpose compiled programming language for berta partiots.
 ### Syntax
 
 Bertalang is a curly brace language. It's syntax is similar to rust, but with a
-few key differences. Statements are terminated with an `eh!`. Whitespaces are generally ignored except when they're part of a keyword.
+few key differences. Statements are terminated with an `eh!`. Whitespaces are
+generally ignored except when they're part of a keyword.
 
 ### Runtime
 
@@ -25,7 +26,7 @@ Ottawa elite.
 
 ### Comments
 
-Comments are done with the `just so you know` keyword.
+Comments are done with the `this is what she is boys` keyword.
 
 ```
 just so you know this is a comment
@@ -88,7 +89,8 @@ give'r a: str is "Hello world!" eh!
 
 ### Fields
 
-Fields are a collection of a data type. They are denoted with the `field` keyword followed by the type enclosed in square brackets.
+Fields are a collection of a data type. They are denoted with the `field`
+keyword followed by the type enclosed in square brackets.
 
 ```
 give'r a: field[🚜32] is [1, 2, 3] eh!
@@ -103,6 +105,22 @@ harvest a eh!
 ```
 
 ### Functions
+
+#### Function declaration
+
+Functions are declared with a return type keyword followed by the function name
+and the arguments enclosed in parentheses. The arguments are separated by a
+comma. The function body is enclosed in curly braces to denote a code block.
+
+```
+🚜32 foo(
+    a: 🚜32,
+    b: 🚜32,
+) {
+    you know what? "Hello world!" eh!
+    sent it 0 eh!
+}
+```
 
 #### Void
 
@@ -142,4 +160,42 @@ string.
 
 ```
 buddy a: str is hand me dart eh!
+```
+
+
+### While
+
+You can also loop over a code block while a condition (must be a boolean) holds
+true with the `roll coal while` keyword.
+
+```
+buddy a: 🚜32 is 1 eh!
+roll coal while a < 10 {
+    you know what? a eh!
+    a is a + 1 eh!
+}
+```
+
+### Foreach
+
+To iterate over a field, use `for all of dem` followed by the variable name and
+the field to iterate over, separated with a `in`. The variable name will be
+immutable.
+
+```
+for all of them variable in [1, 2, 3] {
+    you know what? variable eh!
+}
+```
+
+### If
+
+If you want to conditionally run a code block, use the `if fucking buddy over
+there says` keyword followed be a condition (must be a boolean). If the
+condition holds true, the code block runs once, otherwise it doesn't run at all.
+
+```
+if fucking buddy over there says 2 < 3 {
+    you know what? "this ran"
+}
 ```
