@@ -176,7 +176,7 @@ roll coal while a < 10 {
 }
 ```
 
-### Foreach
+### For each
 
 To iterate over a field, use `for all of dem` followed by the variable name and
 the field to iterate over, separated with a `in`. The variable name will be
