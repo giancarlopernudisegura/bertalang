@@ -21,24 +21,5 @@ fn main() -> io::Result<()> {
         .output()
         .expect("Failed to execute command");
 
-    fs::create_dir("src/grammar").ok();
-    let mod_rs = "src/grammar/mod.rs";
-    let include_commands = "pub use bertalanglexer::*;
-                                  pub use bertalangvisitor::*;
-                                  pub use bertalanglistener::*;
-                                  pub use bertalangparser::*;
-                                  #[rustfmt::skip]
-                                  pub mod bertalanglexer;
-                                  #[rustfmt::skip]
-                                  pub mod bertalangvisitor;
-                                  #[rustfmt::skip]
-                                  pub mod bertalanglistener;
-                                  #[rustfmt::skip]
-                                  #[allow(unused_parens)]
-                                  #[allow(unused_braces)]
-                                  pub mod bertalangparser;";
-    let mut file = File::create(mod_rs)?;
-    file.write_all(include_commands.as_bytes())?;
-
     Ok(())
 }

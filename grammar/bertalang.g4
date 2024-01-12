@@ -20,16 +20,16 @@ statement
     ;
 
 variable_declaration
-    : (VAR | CONST) IDENTIFIER (COLON type)? IS expression END
+    : (VAR | CONST) IDENTIFIER (COLON berta_type)? IS expression END
     ;
 
 variable_assignment
     : IDENTIFIER IS expression END
     ;
 
-type
+berta_type
     : base_type
-    | FIELD_TYPE LEFT_BRACKET type RIGHT_BRACKET
+    | FIELD_TYPE LEFT_BRACKET berta_type RIGHT_BRACKET
     ;
 
 base_type
@@ -41,12 +41,12 @@ base_type
     ;
 
 function_declaration
-    : type IDENTIFIER LEFT_PAREN (function_argument (COMMA function_argument)*)?
+    : berta_type IDENTIFIER LEFT_PAREN (function_argument (COMMA function_argument)*)?
       RIGHT_PAREN LEFT_CURLY statement* RIGHT_CURLY
     ;
 
 function_argument
-    : IDENTIFIER COLON type
+    : IDENTIFIER COLON berta_type
     ;
 
 function_call
@@ -54,21 +54,21 @@ function_call
     ;
 
 expression
-    : LEFT_PAREN expression RIGHT_PAREN                         # parenthesis
-    | (op=ADD | op=SUB | op=NOT) expression                     # unary
-    | <assoc='right'> expression op=POWER expression            # binary
-    | expression (op=MUL | op=DIV | op=MOD) expression          # binary
-    | expression (op=ADD | op=SUB) expression                   # binary
-    | expression (op=EQ | op=NEQ) expression                    # binary
-    | expression (op=GT | op=GTE | op=LT | op=LTE) expression   # binary
-    | expression op=AND                                         # binary
-    | expression (op=OR | op=XOR) expression                    # binary
-    | function_call                                             # function
-    | STRING_LITERAL                                            # literal
-    | BOOLEAN_LITERAL                                           # literal
-    | INTEGER_LITERAL                                           # literal
-    | FLOAT_TYPE                                                # literal
-    | IDENTIFIER                                                # id
+    : LEFT_PAREN expression RIGHT_PAREN             # parenthesis
+    | (ADD | SUB | NOT) expression                  # unary
+    | <assoc='right'> expression POWER expression   # binary
+    | expression (MUL | DIV | MOD) expression       # binary
+    | expression (ADD | SUB) expression             # binary
+    | expression (EQ | NEQ) expression              # binary
+    | expression (GT | GTE | LT | LTE) expression   # binary
+    | expression AND                                # binary
+    | expression (OR | XOR) expression              # binary
+    | function_call                                 # function
+    | STRING_LITERAL                                # literal
+    | BOOLEAN_LITERAL                               # literal
+    | INTEGER_LITERAL                               # literal
+    | FLOAT_TYPE                                    # literal
+    | IDENTIFIER                                    # id
     ;
 
 while_loop
