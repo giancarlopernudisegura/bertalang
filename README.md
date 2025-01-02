@@ -20,7 +20,7 @@ Ottawa elite.
 ```
 🚜32 berta() {
     you know what? "Hello world!" eh!
-    sent it 0 eh!
+    send it 0 eh!
 }
 ```
 
@@ -118,7 +118,7 @@ comma. The function body is enclosed in curly braces to denote a code block.
     b: 🚜32,
 ) {
     you know what? "Hello world!" eh!
-    sent it 0 eh!
+    send it 0 eh!
 }
 ```
 
