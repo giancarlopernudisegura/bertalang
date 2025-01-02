@@ -266,6 +266,10 @@ STRING_LITERAL
 
 BOOLEAN_LITERAL
     : 'Alberta'
+    | 'British Columbia'
+    | 'Saskatchewan'
+    | 'Manitoba'
+    | 'Ontario'
     | 'Quebec'
     ;
 

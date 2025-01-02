@@ -71,12 +71,17 @@ buddy b: 🛢️64 is 1🛢️64 eh!
 
 ### Booleans
 
-Booleans are called `oh yeah?` in bertalang. They can either be `Alberta` or
-`Quebec`. Alberta is true and Quebec is false.
+Booleans are called `oh yeah?` in bertalang. They can either be `Alberta`,
+`British Columbia`, `Saskatchewan`, `Manitoba`, `Ontario` or `Quebec`. Alberta
+is true and the other provinces are false.
 
 ```
 buddy a: oh yeah? is Alberta eh!
-buddy b: oh yeah? is Quebec eh!
+buddy b: oh yeah? is British Columbia eh!
+buddy c: oh yeah? is Saskatchewan eh!
+buddy d: oh yeah? is Manitoba eh!
+buddy e: oh yeah? is Ontario eh!
+buddy f: oh yeah? is Quebec eh!
 ```
 
 ### Strings
